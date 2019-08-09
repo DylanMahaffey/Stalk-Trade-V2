@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/login/services/auth.service';
 
 @Component({
   selector: 'st-nav',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  public dropdown: boolean = false;
+
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
   }
 
+  public logOut(){
+    this.auth.logOut();
+  }
 }
