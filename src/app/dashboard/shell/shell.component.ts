@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'st-shell',
@@ -8,9 +9,13 @@ import { UserService } from './services/user.service';
 })
 export class ShellComponent implements OnInit {
 
-  constructor(private user: UserService) { }
+  constructor(
+    private userService: UserService,
+    private ws: WebsocketService
+    ) { }
 
   ngOnInit() {
+    this.ws.emit('init', { id: this.userService.id })
   }
 
 }

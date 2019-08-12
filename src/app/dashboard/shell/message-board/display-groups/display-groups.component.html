@@ -1,1 +1,10 @@
-<p>display-groups works!</p>
+<div class="conversation" 
+     *ngFor="let messanger of messangers" 
+     (click)="displayConversation(messanger.id)">
+  <span *ngIf="messanger.members[user.id].unread > 0">{{ messanger.members[user.id].unread }}</span>
+    <p class="conversation-name">{{ messanger.name }}</p>
+    <hr>
+    <p class="conversation-details">Group Conversation</p>
+
+</div>
+  

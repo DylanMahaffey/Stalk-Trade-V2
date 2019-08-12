@@ -1,1 +1,28 @@
-<p>message-board works!</p>
+<div class="message-board">
+
+    <div class="message-display">
+      <ng-container  *ngFor="let id of messageService.openMessages">
+        <div>
+          <st-messanger [id]="id"></st-messanger>
+        </div>
+      </ng-container>
+    </div>
+
+
+
+  <div class="conversations-list">
+      <ul class="conversations-nav">
+        <a class="private" (click)="display = 'friends'">Friends</a>
+        <a class="group" (click)="display = 'groups'">Grops</a>
+        <a class="trade" (click)="display = 'trades'">Trades</a>
+      </ul>
+
+      <div class="display-conversations">
+
+        <st-display-friends *ngIf="display === 'friends'"></st-display-friends>
+        <st-display-groups *ngIf="display === 'groups'"></st-display-groups>
+        <st-display-trades *ngIf="display === 'trades'"></st-display-trades>
+
+      </div>
+  </div>  
+</div>

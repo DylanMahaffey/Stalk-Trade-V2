@@ -1,1 +1,8 @@
-<p>display-trades works!</p>
+<a *ngFor="let messanger of messangers"
+ (click)="displayConversation(messanger.id)">
+    <div class="conversation">
+        <p class="conversation-name">{{ messanger.name }}</p>
+        <hr>
+        <p class="conversation-details">Trade</p>
+    </div>
+</a>

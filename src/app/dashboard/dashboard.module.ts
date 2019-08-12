@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ShellComponent } from './shell/shell.component';
@@ -20,7 +21,8 @@ import { HomeComponent } from './shell/tabs/home/home.component';
   declarations: [ShellComponent, NavComponent, MessageBoardComponent, DisplayFriendsComponent, DisplayGroupsComponent, DisplayTradesComponent, MessangerComponent, NotificationsComponent, FriendsComponent, ProfileComponent, CropManagerComponent, TradeManagerComponent, HomeComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

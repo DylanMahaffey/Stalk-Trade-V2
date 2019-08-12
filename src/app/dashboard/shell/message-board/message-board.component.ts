@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from './services/message.service';
 
 @Component({
   selector: 'st-message-board',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageBoardComponent implements OnInit {
 
-  constructor() { }
+  public display: string = 'friends';
+
+  constructor(public messageService: MessageService) { }
 
   ngOnInit() {
   }

@@ -1,1 +1,9 @@
-<p>display-friends works!</p>
+<div class="conversation" 
+  *ngFor="let messanger of messangers"
+  (click)="displayConversation(messanger.id)">
+  <span *ngIf="messanger.members[user.id].unread > 0">{{ messanger.members[user.id].unread }}</span>
+  <p class="conversation-name">{{ messages.getMessangerName(messanger.members) }}</p>
+  <hr>
+  <p class="conversation-details">Private conversation</p>
+ 
+</div>

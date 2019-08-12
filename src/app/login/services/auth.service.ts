@@ -14,12 +14,17 @@ export class AuthService {
 
   public verify: BehaviorSubject<any> = new BehaviorSubject({success: true});
 
-  constructor(private ws: WebsocketService, private router: Router, private user: UserService) { 
+  constructor(
+    private ws: WebsocketService, 
+    private router: Router, 
+    private user: UserService
+    ) { 
     this.ws.on('login').subscribe(data => {
       this.verify.next(data)
 
       if(data.success){
-        this.user.id = data.id
+        localStorage.setItem('userId', data.id);
+        this.user.id = data.id;
 
         this.ws.emit('init', { id: data.id })
         this.router.navigate(['dashboard']);

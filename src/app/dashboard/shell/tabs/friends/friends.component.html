@@ -1,1 +1,21 @@
-<p>friends works!</p>
+<h2>Friends</h2>
+<br>
+
+    <h3>Friends List</h3>
+    <div class="container">
+        <div class="card" *ngFor="let friend of friends">
+            <p>{{ friend.firstName }} {{ friend.lastName }}</p>
+            <img class="image" src="../../../../assets/Images/icons8-user-64.png" alt="anon">
+            <a routerLink="../view-profile/{{ friend.id }}" class="button details" >view profile</a>
+        </div>
+    </div>
+    
+    <h3>Suggested Users</h3>
+    <div class="container">
+        <div class="card" *ngFor="let user of suggestedUsers">
+            <p>{{ user.firstName }} {{ user.lastName }}</p>
+            <img class="image" src="../../../../assets/Images/icons8-user-64.png" alt="anon">
+            <!-- <a routerLink="../view-profile/{{ user.id }}" class="button details" >view profile</a> -->
+            <button class="button details" (click)="addFriend(user.id)">Add Friend</button>
+        </div>
+    </div>

@@ -10,13 +10,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
 
-  public id: string;
+  public id: string = localStorage.getItem('userId');
   public user: BehaviorSubject<User> = new BehaviorSubject(null);
 
-  constructor(private ws: WebsocketService, private api: ApiService) {
+  constructor(
+    private ws: WebsocketService, 
+    private api: ApiService
+    ) {
+      // this.ws.emit('init', { id: this.id })
     this.ws.on('update-user').subscribe(data => {
-      console.log(data);
-      
       this.user.next(data);
     })
   }
