@@ -9,7 +9,7 @@ import { NotificationsComponent } from './shell/tabs/notifications/notifications
 
 const routes: Routes = [
   { path: '', component: ShellComponent, children: [
-    { path: '', component: HomeComponent },
+    { path: '', loadChildren: './shell/tabs/explore/explore.module#ExploreModule' },
     { path: 'trade-manager', component: TradeManagerComponent },
     { path: 'crop-manager', loadChildren: './shell/tabs/crop-manager/crop-manager.module#CropManagerModule' },
     { path: 'profile', component: ProfileComponent },
