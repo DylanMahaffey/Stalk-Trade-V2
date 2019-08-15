@@ -13,7 +13,7 @@ export class FriendsService {
     private ws: WebsocketService,
     private user: UserService
     ) { 
-      this.ws.emit('friends', { id: this.user.id })
+      this.ws.emit('friends', { id: this.user.id });
     }
 
   getFriends(){
@@ -26,6 +26,6 @@ export class FriendsService {
   }
 
   public addFriend(body){
-    this.ws.emit('add-friend', body)
+    this.ws.emit('add-friend', body);
   }
 }

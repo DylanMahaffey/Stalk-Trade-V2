@@ -13,12 +13,11 @@ import { MessangerComponent } from './shell/message-board/messanger/messanger.co
 import { NotificationsComponent } from './shell/tabs/notifications/notifications.component';
 import { FriendsComponent } from './shell/tabs/friends/friends.component';
 import { ProfileComponent } from './shell/tabs/profile/profile.component';
-import { CropManagerComponent } from './shell/tabs/crop-manager/crop-manager.component';
 import { TradeManagerComponent } from './shell/tabs/trade-manager/trade-manager.component';
 import { HomeComponent } from './shell/tabs/home/home.component';
 
 @NgModule({
-  declarations: [ShellComponent, NavComponent, MessageBoardComponent, DisplayFriendsComponent, DisplayGroupsComponent, DisplayTradesComponent, MessangerComponent, NotificationsComponent, FriendsComponent, ProfileComponent, CropManagerComponent, TradeManagerComponent, HomeComponent],
+  declarations: [ShellComponent, NavComponent, MessageBoardComponent, DisplayFriendsComponent, DisplayGroupsComponent, DisplayTradesComponent, MessangerComponent, NotificationsComponent, FriendsComponent, ProfileComponent, TradeManagerComponent, HomeComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
