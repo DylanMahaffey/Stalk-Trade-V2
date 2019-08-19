@@ -11,13 +11,12 @@ import { DisplayGroupsComponent } from './shell/message-board/display-groups/dis
 import { DisplayTradesComponent } from './shell/message-board/display-trades/display-trades.component';
 import { MessangerComponent } from './shell/message-board/messanger/messanger.component';
 import { NotificationsComponent } from './shell/tabs/notifications/notifications.component';
-import { FriendsComponent } from './shell/tabs/friends/friends.component';
 import { ProfileComponent } from './shell/tabs/profile/profile.component';
 import { TradeManagerComponent } from './shell/tabs/trade-manager/trade-manager.component';
 import { HomeComponent } from './shell/tabs/home/home.component';
 
 @NgModule({
-  declarations: [ShellComponent, NavComponent, MessageBoardComponent, DisplayFriendsComponent, DisplayGroupsComponent, DisplayTradesComponent, MessangerComponent, NotificationsComponent, FriendsComponent, ProfileComponent, TradeManagerComponent, HomeComponent],
+  declarations: [ShellComponent, NavComponent, MessageBoardComponent, DisplayFriendsComponent, DisplayGroupsComponent, DisplayTradesComponent, MessangerComponent, NotificationsComponent, ProfileComponent, TradeManagerComponent, HomeComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

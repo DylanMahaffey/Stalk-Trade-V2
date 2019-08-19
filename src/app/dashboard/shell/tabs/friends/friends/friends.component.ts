@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { take } from 'rxjs/operators';
-import { FriendsService } from './services/friends.service';
+import { FriendsService } from '../services/friends.service';
 
 @Component({
   selector: 'st-friends',
@@ -19,9 +19,7 @@ export class FriendsComponent implements OnInit {
   constructor(private usersService: UserService, private friendsService: FriendsService) { }
 
   ngOnInit() {
-    this.friendsService.getFriends().subscribe((data: any) => {
-      console.log(data);
-      
+    this.friendsService.friends.subscribe(data => {
       this.friends = data;
     })
     this.friendsService.getSuggestedFriends(this.usersService.id).pipe(take(1)).subscribe((data: any) => {

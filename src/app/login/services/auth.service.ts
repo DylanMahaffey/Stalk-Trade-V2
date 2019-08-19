@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { UserService } from 'src/app/dashboard/shell/services/user.service';
+import { LoginService } from 'src/app/dashboard/shell/services/login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class AuthService {
   constructor(
     private ws: WebsocketService, 
     private router: Router, 
-    private user: UserService
+    private user: UserService,
+    private loginService: LoginService
     ) { 
     this.ws.on('login').subscribe(data => {
       this.verify.next(data)
@@ -25,6 +27,7 @@ export class AuthService {
       if(data.success){
         localStorage.setItem('userId', data.id);
         this.user.id = data.id;
+        this.loginService.loginId.next(data.id)
 
         this.ws.emit('init', { id: data.id })
         this.router.navigate(['dashboard']);

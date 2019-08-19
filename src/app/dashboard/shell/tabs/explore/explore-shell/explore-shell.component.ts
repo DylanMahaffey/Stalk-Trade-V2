@@ -14,8 +14,8 @@ export class ExploreShellComponent implements OnInit {
   ngOnInit() {
   }
 
-  search(){
-    console.log(this.searchText);
+  search(search){
+    console.log(search);
     
   }
 }

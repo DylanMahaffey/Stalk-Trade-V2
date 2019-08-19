@@ -1,1 +1,12 @@
-<p>crops-feed works!</p>
+<br>
+<ng-container *ngFor="let crop of crops">
+    <div class="card">
+        <img src="{{ crop.imgSrc }}" alt="">
+        <div class="card-info">
+            <div class="info">
+                {{ crop.cropName }}
+                harvested: {{ crop.harvested }}
+            </div>
+        </div>
+    </div>
+</ng-container>

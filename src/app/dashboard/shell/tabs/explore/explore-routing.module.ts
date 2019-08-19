@@ -8,8 +8,8 @@ import { SearchFeedComponent } from './search-feed/search-feed.component';
 const routes: Routes = [
   { path: '', component: ExploreShellComponent, children: [
     { path: '', component: CropsFeedComponent },
-    { path: 'friends', component: FriendsFeedComponent },
-    { path: 'search', component: SearchFeedComponent },
+    { path: 'friends-feed', component: FriendsFeedComponent },
+    { path: 'search-feed/:search', component: SearchFeedComponent },
   ]}
 ];
 

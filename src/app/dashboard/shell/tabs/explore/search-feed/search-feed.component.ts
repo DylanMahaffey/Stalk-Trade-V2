@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'st-search-feed',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFeedComponent implements OnInit {
 
-  constructor() { }
+  public search: string;
+
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.router.paramMap.subscribe(data => {
+      this.search = data.get('search');
+    })
   }
 
 }
